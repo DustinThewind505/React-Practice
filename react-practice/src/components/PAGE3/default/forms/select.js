@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 
 function SelectInputForm(props) {
     // ========== STATE ==========
-    const [formData, setFormData] = useState({
-        select: ""
-    })
+    const [formData, setFormData] = useState([{
+        select: {}
+    }])
 
 
 
@@ -24,12 +24,12 @@ function SelectInputForm(props) {
 
         props.setDisplayForm(formData)
 
-        setFormData({
-            select: ""
-        })
+        // setFormData([{
+        //     select: {}
+        // }])
     }
 
-
+console.log(formData)
 
 
 

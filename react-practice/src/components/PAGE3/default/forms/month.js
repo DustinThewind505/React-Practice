@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 
@@ -20,24 +20,23 @@ function FormInput() {
         setFormData("")
     }
 
-
     // ========== COMPONENT ==========
     return (
         <div className='form-container'>
-            <h3>ONE WAY TICKET</h3>
-            <p>🖤🖤🖤🖤🖤🖤</p>
+            <h3>Form #11</h3>
+            <p>username: {formData}</p>
             <form onSubmit={handleSubmit}>
-                <h3>TO MIDNIGHT!</h3>
+                <h3>Input: text</h3>
                 <section className='form-body'>
                     <label>username
-                        <input value={formData} onChange={handleChange} />
+                        <input type='month' value={formData} onChange={handleChange} />
+                        <p className='error'>{formData === "" ? '*must enter username' : '✔'}</p>
                     </label>
                 </section>
                 <footer>
-                    <button type='submit'>Submit</button>
+                    <button type='text' disabled={formData === "" ? true : false}>Submit</button>
                 </footer>
             </form>
-            <p>{formData}</p>
         </div>
     )
 }
