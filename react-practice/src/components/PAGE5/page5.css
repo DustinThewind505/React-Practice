@@ -1,3 +1,19 @@
 img {
     width: 50%;
 }
+
+.accordian-item {
+    background-color: black;
+    border: 2px solid white;
+    margin: 2rem auto;
+    width: 90%;
+}
+
+.accordian-description {
+    background-color: darkred;
+    border: 1px solid papayawhip;
+    border-radius: 13%;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 90%;
+}
