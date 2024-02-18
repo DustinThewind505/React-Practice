@@ -40,7 +40,7 @@ function Page5() {
     return(
         <div>
             <h1>Page 5</h1>
-            <button onClick={() => handleMultipleSelectionButton}>{!enableMulitpleselection ? "Enable Multiple Selections" : "Disable Multiple Selections"}</button>
+            <button onClick={() => handleMultipleSelectionButton()}>{!enableMulitpleselection ? "Enable Multiple Selections" : "Disable Multiple Selections"}</button>
             {
                 avengersData && avengersData.length > 0 ?
                 avengersData.map(avenger => <div className="accordian-item">
