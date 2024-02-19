@@ -5,17 +5,33 @@ import React, { useState } from 'react';
 function Page6() {
 // ===== STATE =====
 const [backgroundColor, setBackgroundcolor] = useState("green");
+const [typeOfBackgroundColor, setTypeOfBackgroundColor] = useState("color")
 
 
 // ===== FUNCTIONS =====
-const randomColor = () => {
-    let hex = "#"
-    const hexArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F",]
+const randomHexColor = () => {
+    setTypeOfBackgroundColor("Hex");
+
+    let hex = "#";
+    const hexArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F",];
 
     for(let i = 0; i < 6; i++) {
         hex += hexArray[Math.floor(Math.random() * hexArray.length)];
     }
-    setBackgroundcolor(hex)
+
+    setBackgroundcolor(hex);
+    console.log(backgroundColor);
+}
+
+const handleRandomRgbColor = () => {
+    setTypeOfBackgroundColor("rgb");
+
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    setBackgroundcolor(`rgb(${r}, ${g}, ${b})`);
+    console.log(backgroundColor);
 }
 
 
@@ -27,7 +43,9 @@ const randomColor = () => {
             <p>Random Color Generator</p>
             <div style={{backgroundColor: backgroundColor}}>
                 <p>Changing background</p>
-                <button onClick={randomColor}>Random Color</button>
+                <button onClick={randomHexColor}>Random Hex Color</button>
+                <button onClick={handleRandomRgbColor}>Random RGB Color</button>
+                {typeOfBackgroundColor === "Hex" ? <p>{`${typeOfBackgroundColor}${backgroundColor}`}</p> : <p>{`${backgroundColor}`}</p>}
             </div>
         </div>
     )
