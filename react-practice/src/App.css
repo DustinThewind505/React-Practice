@@ -117,3 +117,23 @@ form {
   background-color: black;
   
 }
+
+.circle-rating-container {
+  background-color: aqua;
+}
+
+.circle-rating {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
+.circle-rating active {
+  background-color: yellow;
+}
+
+.circle-rating inactive {
+  background-color: none;
+}
