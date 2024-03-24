@@ -27,7 +27,7 @@ function Page7({ numberOfStars = 5 }) {
 
     return(
         <div>
-            <h1 onMouseOver={event => event.target.innerHTML= "Fuck you"} onMouseOut={event => event.target.innerHTML = "Page 7"} className="page-7">Page 7</h1>
+            <h1 onMouseOver={event => event.target.innerHTML= "Seinfeld"} onMouseOut={event => event.target.innerHTML = "Page 7"} className="page-7">Page 7</h1>
 
             <div className="circle-rating-container">
             {

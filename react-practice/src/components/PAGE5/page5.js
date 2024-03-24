@@ -1,65 +1,80 @@
-import React, { useState } from 'react';
-import avengersData from './data.js'
+import React, { useState } from "react";
 
+import MarvelData from "./data";
 import './page5.css'
 
+
+
 function Page5() {
-    // ===== STATE =====
-    const [singleAccordianSelection, setSingleAccordianSelection] = useState(false);
-    const [accordianIcon, setAccordianIcon] = useState(true);
 
-    const [enableMulitpleselection, setEnableMulitpleselection] = useState(false);
-    const [multiple, setMultiple] = useState([]);
+    const [accordianState, setAccordianState] = useState(true);
+    const [accordianSingleSelection, setAccordianSingleSelection] = useState(0);
+    const [accordianMultipleSelection, setaccordianMultipleSelection] = useState([]);
 
-    // ===== FUNCTIONS =====
     const handleSingleSelection = (id) => {
-        setSingleAccordianSelection(id === singleAccordianSelection ? null : id)
-        setAccordianIcon(id === singleAccordianSelection ? setAccordianIcon(!accordianIcon) : setAccordianIcon(true))
+
+        if(accordianSingleSelection === id) {
+            setAccordianSingleSelection(0)
+        } else {
+            setAccordianSingleSelection(id)
+        }
+        
     }
 
-    const handleMultiSelection = (id) => {
-        const newMultiple = [...multiple];
-        const findIndexOfId = newMultiple.indexOf(id);
+    const handleMultipleSelection = (id) => {
+
+        let newArray = [...accordianMultipleSelection]
+        const findIndexOfId = newArray.indexOf(id)
 
         if(findIndexOfId === -1) {
-            newMultiple.push(id);
+            newArray.push(id)
         } else {
-            newMultiple.splice(findIndexOfId, 1)
+            newArray.splice(findIndexOfId, 1)
         }
-        setMultiple(newMultiple);
+
+        setaccordianMultipleSelection(newArray)
     }
 
-    const handleMultipleSelectionButton = () => {
-        setEnableMulitpleselection(!enableMulitpleselection);
-        setSingleAccordianSelection(false);
-        setMultiple([])
+    const handleAccordianStateButton = () => {
+
+        setAccordianSingleSelection(0)
+        setaccordianMultipleSelection([])
+        setAccordianState(!accordianState)
+        
     }
 
+    console.log(accordianMultipleSelection);
 
-    // ===== COMPONENT =====
-    return(
+    return (
         <div>
-            <h1>Page 5</h1>
-            <button onClick={() => handleMultipleSelectionButton()}>{!enableMulitpleselection ? "Enable Multiple Selections" : "Disable Multiple Selections"}</button>
-            {
-                avengersData && avengersData.length > 0 ?
-                avengersData.map(avenger => <div className="accordian-item">
-                    <p>{avenger.nickname}</p>
-                    <p onClick={enableMulitpleselection ? () => handleMultiSelection(avenger.id) : () => handleSingleSelection(avenger.id)}>+</p>
-                    {
-                        singleAccordianSelection === avenger.id  || multiple.indexOf(avenger.id) !== -1 ? <div>
-                            <img src={avenger.img} alt={`Headshot of ${avenger.name}`} />
-                            <p className="accordian-description">{avenger.description}</p>
-                        </div> : null
-                    }
-                </div>)
+           <h1>Accodian component</h1>
+           <button onClick={() => handleAccordianStateButton()}>Enable Multi select</button>
+
+           {
+            MarvelData && MarvelData.length > 0 ?
+                
+                    MarvelData.map(avenger => {
+
+                        return <div className="accordian-item" key={avenger.id} onClick={accordianState ? () => handleSingleSelection(avenger.id) : () => handleMultipleSelection(avenger.id)}>
+                            <img src={avenger.thumbnail} alt={`${avenger.name} head shot`}/>
+                            <span>+</span>
+                                {accordianSingleSelection === avenger.id || accordianMultipleSelection.indexOf(avenger.id) !== -1 ? <div className="accordian-description">
+                                        <p>{avenger.nickname}</p>
+                                        <p>{avenger.description}</p>
+                                    </div>
+                                    :
+                                    null
+                                }
+                        </div>
+                    })
+                
                 :
-                <p>No Avengers data found</p>
-            }
+                <p>
+                    No data found
+                </p>
+           }
         </div>
     )
-
-
 }
 
-export default Page5;
+export default Page5
