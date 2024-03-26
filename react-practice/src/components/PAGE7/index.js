@@ -37,7 +37,7 @@ function Page7({ numberOfStars = 5 }) {
                     
                     return (
                         <div 
-                            className={index <= (hover || rating) ? "circle-rating active" : "circle-rating inactive"}
+                            className={index <= (hover || rating) ? "circle-rating active-circle" : "circle-rating inactive-circle"}
                             key={0}
                             onClick={() => handleClick(index)}
                             onMouseOver={() => handleMouseOver(index)}

@@ -119,21 +119,23 @@ form {
 }
 
 .circle-rating-container {
-  background-color: aqua;
+  background-color: darkslategrey;
+  display: flex;
+  justify-content: center;
 }
 
 .circle-rating {
   border: 1px solid black;
   border-radius: 50%;
-  height: 25px;
-  width: 25px;
+  height: 50px;
+  width: 50px;
   margin: 5px;
 }
 
-.circle-rating active {
+.active-circle {
   background-color: yellow;
 }
 
-.circle-rating inactive {
+.inactive-circle {
   background-color: none;
 }
