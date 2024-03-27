@@ -5,22 +5,27 @@ import { CardHeader, CardBody } from 'reactstrap';
 
 const hikers = [
     {
+        "id": 1,
         "name": "Yoda",
         "trail": "PCT"
     },
     {
+        "id": 2,
         "name": "Zig-Zag",
         "trail": "AT"
     },
     {
+        "id": 3,
         "name": "Viking",
         "trail": "AT"
     },
     {
+        "id": 4,
         "name": "Nilla",
         "trail": "CDT"
     },
     {
+        "id": 5,
         "name": "Snow White",
         "trail": "PCT"
     },

@@ -24,12 +24,11 @@ function RickAndMortyApi({ fontStyles }) {
         axios
             .get(`https://rickandmortyapi.com/api/character/${characterNumber}`)
             .then(res => {
-                console.log(res);
                 setData(res.data);
 
             })
             .catch(err => {
-                console.log('Error', err)
+                console.error('Error', err)
             })
 
     }, [characterNumber]);

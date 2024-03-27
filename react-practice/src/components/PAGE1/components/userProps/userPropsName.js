@@ -10,7 +10,7 @@ function UserName(props) {
     return (
         <>
             <ul>Name
-                {props.name.map(user => <li>{user.name}</li>)}
+                {props.name.map(user => <li key={user.id}>{user.name}</li>)}
             </ul>
         </>
     )

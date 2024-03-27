@@ -3,19 +3,19 @@ import logo from '../../logo.svg';
 
 import { Card, Container, Row, Col } from 'reactstrap';
 
-import Counter from './counter/counter';
-import ColorPicker from './colorPicker/colorPicker';
-import HideElement from './hideElement/hideElement';
-import InputValue from './inputValue/inputValue';
-import UserProps from './userProps/userProps';
-import RandomColor from './randomColors/randomColor';
-import GhibliApi from './ghibliApi/ghibliAPI';
-import DogApi from './dogAPI/dogAPI';
-import RickAndMortyApi from './rickAndMorty/RickAndMorty';
-import NasaApi from './nasaApi/nasaApi';
-import FriendsForm from './friendsForm/friendsForm';
-import AdvancedForm from './advancedForm/advancedform';
-import { ClassComponentForm } from './classComponentForm'
+import Counter from './components/counter/counter';
+import ColorPicker from './components/colorPicker/colorPicker';
+import HideElement from './components/hideElement/hideElement';
+import InputValue from './components/inputValue/inputValue';
+import UserProps from './components/userProps/userProps';
+import RandomColor from './components/randomColors/randomColor';
+import GhibliApi from './components/ghibliApi/ghibliAPI';
+import DogApi from './components/dogAPI/dogAPI';
+import RickAndMortyApi from './components/rickAndMorty/RickAndMorty';
+import NasaApi from './components/nasaApi/nasaApi';
+import FriendsForm from './components/friendsForm/friendsForm';
+import AdvancedForm from './components/advancedForm/advancedform';
+import { ClassComponentForm } from './components/classComponentForm'
 
 import './page1.css';
 
@@ -145,6 +145,13 @@ function PageOne() {
                 {/* ======== Class Component Form ======== */}
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="friends-form">
+                        <ClassComponentForm />
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </Card>
+                </Col>
+                {/* ======== Class Component Form ======== */}
+                <Col sm="6" md="4" xl="6">
+                    <Card style={bgStyles} className="accordian-component">
                         <ClassComponentForm />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>

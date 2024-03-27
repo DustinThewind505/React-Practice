@@ -42,7 +42,7 @@ function AdvancedForm() {
 
         axios.post("https://reqres.in/api/users", formData)
         .then((resp) => {
-            console.log(resp);
+            console.log("users", resp);
 
             setPost(resp.data);
 
@@ -64,7 +64,7 @@ function AdvancedForm() {
             setErrors({...errors, [e.target.name]: ""})
         })
         .catch(err => {
-            console.log("err", err)
+            console.error("err", err)
             setErrors({...errors, [e.target.name]: err.errors[0]})
         })
     }
@@ -111,9 +111,7 @@ function AdvancedForm() {
             console.log("is my form valid?", valid);
             setButtonDisabled(!valid)
         })
-    }, [formData])
-
-    console.log("formdata", formData)
+    }, [formData, formSchema])
 
 
     // ========== COMPONENT ==========

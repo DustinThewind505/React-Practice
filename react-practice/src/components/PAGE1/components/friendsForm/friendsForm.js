@@ -45,7 +45,7 @@ function FriendsForm() {
             console.log("is my form valid?", valid);
             setButtonDisabled(!valid)
         })
-    }, [formValues])
+    }, [formValues, formSchema])
 
     // ========== FUNCTIONS ==========
     const handleInputChange = event => {

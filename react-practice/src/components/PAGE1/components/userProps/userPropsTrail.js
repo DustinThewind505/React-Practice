@@ -10,7 +10,7 @@ function UserTrail(props) {
     return (
         <>
             <ul>Trail
-                {props.trail.map(user => <li>{user.trail}</li>)}
+                {props.trail.map(user => <li key={user.id}>{user.trail}</li>)}
             </ul>
         </>
     )
