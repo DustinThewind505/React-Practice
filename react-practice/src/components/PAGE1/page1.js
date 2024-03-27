@@ -15,7 +15,8 @@ import RickAndMortyApi from './components/rickAndMorty/RickAndMorty';
 import NasaApi from './components/nasaApi/nasaApi';
 import FriendsForm from './components/friendsForm/friendsForm';
 import AdvancedForm from './components/advancedForm/advancedform';
-import { ClassComponentForm } from './components/classComponentForm'
+import { ClassComponentForm } from './components/classComponentForm';
+import AccordianComponent from './components/accordianComponent/accordianComponent';
 
 import './page1.css';
 
@@ -149,10 +150,10 @@ function PageOne() {
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
-                {/* ======== Class Component Form ======== */}
+                {/* ======== Accordian Component ======== */}
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="accordian-component">
-                        <ClassComponentForm />
+                        <AccordianComponent />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
