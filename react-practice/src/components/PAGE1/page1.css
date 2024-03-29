@@ -12,6 +12,11 @@
     background: green;
     color: lightgreen;
   }
+
+  .white-button:hover {
+    background: papayawhip;
+    color: lightskyblue;
+  }
   
   .random-button:hover {
     background: black;
@@ -26,7 +31,7 @@
   }
   
   .input-value-note {
-    width: 90%;
+    width: 25%;
     margin: 0 auto;
     padding: 0.7em;
     background-color: red;

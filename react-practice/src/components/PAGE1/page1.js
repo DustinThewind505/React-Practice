@@ -31,7 +31,7 @@ function PageOne() {
     const [star, setStar] = useState(false)
 
 
-    // ======== Random Color ========
+    // ======== Reusable Random Color Generation ========
     const [randomColor, setRandomColor] = useState("cadetBlue");
 
     const changeColor = arr => {
@@ -80,7 +80,7 @@ function PageOne() {
                 </Col>
                 {/* ======== Hide Element ======== */}
                 <Col sm="6" md="4" xl="6">
-                    <Card style={{ background: star ? randomColor : "", }} >
+                    <Card style={{ background: star ? randomColor : "pink", }} >
                         <HideElement star={star} setStar={setStar} fontStyles={fontStyles} />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
@@ -158,14 +158,14 @@ function PageOne() {
                 {/* ======== Accordian Component ======== */}
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="accordian-component">
-                        <AccordianComponent />
+                        <AccordianComponent fontStyles={fontStyles}/>
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
                 {/* ======== Random RGB ======== */}
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="random-rgb-color">
-                        <RandomRgbColors />
+                        <RandomRgbColors fontStyles={fontStyles}/>
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>

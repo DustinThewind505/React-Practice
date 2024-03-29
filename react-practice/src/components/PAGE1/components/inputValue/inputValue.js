@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import axios from 'axios';
 
 
-import { CardHeader, FormText, Form, Label, Input, Button } from 'reactstrap';
+import { CardHeader, FormText, Form, Label, Input, Button, CardText } from 'reactstrap';
 
 
 
@@ -79,12 +79,6 @@ function InputValue(props) {
         <>
             <CardHeader><span style={props.fontStyles}>Input</span> V<span style={props.fontStyles}>a</span>l<span style={props.fontStyles}>u</span><span style={props.fontStyles}>e</span></CardHeader>
             <Form onSubmit={handleSubmit} className="input-value-note" >
-                <div style={{ backgroundColor: props.randomColor }}>
-                    <FormText><strong>{title || "Title"}</strong></FormText>
-                    <FormText>{body || "Body"}</FormText>
-                    <FormText style={props.fontStyles}>{dropdown || "Dropdown"}</FormText>
-                    <FormText>Are you happy? {happyCheckbox ? "Yes" : "No"}</FormText>
-                </div>
                 <Label>
                     <Input type="text" name="title" id="inputTitle" value={formData.title} onChange={handleInputChange} placeholder="Enter Title" />
                 </Label>
@@ -108,6 +102,10 @@ function InputValue(props) {
                 <br />
                 <Button>Submit</Button>
             </Form>
+            <CardText><strong>{title || "Title"}</strong></CardText>
+            <CardText>{body || "Body"}</CardText>
+            <CardText style={props.fontStyles}>{dropdown || "Dropdown"}</CardText>
+            <CardText>Are you happy? {happyCheckbox ? "Yes" : "No"}</CardText>
             {notes.map(note =>
                 <div className={`inputValue-note ${note.complete ? "complete" : ""}`} onClick={() => toggleComplete(note.title)} key={note.title}>
                     <h2>{note.title}</h2>
