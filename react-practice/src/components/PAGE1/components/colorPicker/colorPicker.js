@@ -17,6 +17,7 @@ function ColorPicker(props) {
                 <Button className="blue-button" onClick={() => props.setColor("Blue")}>Blue</Button>
                 <Button className="red-button" onClick={() => props.setColor("Red")}>Red</Button>
                 <Button className="green-button" onClick={() => props.setColor("Green")}>Green</Button>
+                <Button className="white-button" onClick={() => props.setColor("White")}>White</Button>
             </div>
             </CardBody>
         </>

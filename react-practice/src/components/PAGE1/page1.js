@@ -17,6 +17,7 @@ import FriendsForm from './components/friendsForm/friendsForm';
 import AdvancedForm from './components/advancedForm/advancedform';
 import { ClassComponentForm } from './components/classComponentForm';
 import AccordianComponent from './components/accordianComponent/accordianComponent';
+import RandomRgbColors from './components/randomRgb';
 
 import './page1.css';
 
@@ -49,6 +50,10 @@ function PageOne() {
         fontStyles.color = "red";
     } else if (color === "Green") {
         fontStyles.color = "green";
+    } else if(color === "White") {
+        fontStyles.color = "white";
+    } else {
+        fontStyles.color = "white";
     }
 
     const bgStyles = {
@@ -154,6 +159,13 @@ function PageOne() {
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="accordian-component">
                         <AccordianComponent />
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </Card>
+                </Col>
+                {/* ======== Random RGB ======== */}
+                <Col sm="6" md="4" xl="6">
+                    <Card style={bgStyles} className="random-rgb-color">
+                        <RandomRgbColors />
                         <img src={logo} className="App-logo" alt="logo" />
                     </Card>
                 </Col>
