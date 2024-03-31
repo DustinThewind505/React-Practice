@@ -1,0 +1,15 @@
+.circles-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-circle {
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+}
+
+.rating-circle .active{
+    background-color: blue;
+}
