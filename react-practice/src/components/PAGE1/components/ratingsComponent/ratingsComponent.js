@@ -6,15 +6,29 @@ import './ratingsComponent.css';
 
 
 function RatingsComponent({numberOfStars = 5}) {
+
     const [rating, setRating] = useState(0);
+    const [mouseOverRating, setMouseOverRating] = useState(0)
+;
 
-
-    const handleOnClickRating = (index) => {
-        if(index === rating) {
+    const handleOnClickRating = (id) => {
+        if(rating === id) {
             setRating(0)
         } else {
-            setRating(index)
+            setRating(id)
         }
+
+    }
+
+    const handleMouseOverRating = (id) => {
+
+        setMouseOverRating(id)
+
+    }
+
+    const handleMouseLeaveRating = () => {
+
+        setMouseOverRating(rating)
 
     }
 
@@ -24,11 +38,16 @@ function RatingsComponent({numberOfStars = 5}) {
             <CardBody className="circles-container">
                 {
                     [...Array(numberOfStars)].map((star, index) => {
-                        index++
+                        index += 1
                         console.log(`Check${index}`)
 
                         return(
-                            <div key={index} className={index <= rating ? "rating-circle active" : "rating-circle"} onClick={() => handleOnClickRating(index)}>
+                            <div 
+                                key={index}
+                                className={index <= (mouseOverRating || rating) ? "rating-circle active" : "rating-circle inactive"}
+                                onClick={() => handleOnClickRating(index)}
+                                onMouseOver={() => handleMouseOverRating(index)}
+                                onMouseLeave={() => handleMouseLeaveRating()}>
                                 
                             </div>
                         )
