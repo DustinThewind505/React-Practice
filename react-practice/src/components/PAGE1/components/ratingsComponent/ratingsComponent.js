@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CardBody, CardHeader } from "reactstrap";
+import { CardBody, CardGroup, CardHeader, CardText } from "reactstrap";
 
 import './ratingsComponent.css';
 
@@ -35,24 +35,28 @@ function RatingsComponent({numberOfStars = 5}) {
     return(
         <>
             <CardHeader>Ratings Component</CardHeader>
-            <CardBody className="circles-container">
+            <CardBody>
+            <CardText>{rating} out of 5</CardText>
+            <CardGroup className="circles-container">
                 {
                     [...Array(numberOfStars)].map((star, index) => {
                         index += 1
                         console.log(`Check${index}`)
 
                         return(
-                            <div 
-                                key={index}
-                                className={index <= (mouseOverRating || rating) ? "rating-circle active" : "rating-circle inactive"}
-                                onClick={() => handleOnClickRating(index)}
-                                onMouseOver={() => handleMouseOverRating(index)}
-                                onMouseLeave={() => handleMouseLeaveRating()}>
-                                
-                            </div>
+                            <>
+                                <div 
+                                    key={index}
+                                    className={index <= (mouseOverRating || rating) ? "rating-circle active" : "rating-circle inactive"}
+                                    onClick={() => handleOnClickRating(index)}
+                                    onMouseOver={() => handleMouseOverRating(index)}
+                                    onMouseLeave={() => handleMouseLeaveRating()}>
+                                </div>
+                            </>
                         )
                     })
                 }
+            </CardGroup>
             </CardBody>
         </>
     )
