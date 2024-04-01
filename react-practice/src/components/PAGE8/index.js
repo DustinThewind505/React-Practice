@@ -17,19 +17,20 @@ function Page8({ propsUrl = "https://picsum.photos/v2/list?page=1&limit=5"}) {
             const urlData = await response.json();
 
             setData(urlData);
-            console.log("data from test api call", data);
 
         } catch(error) {
             console.log("error from fetchApitest", error);
         };
 
     };
+    
 
     useEffect(() => {
 
         fetchApiTest(propsUrl);
 
     }, [propsUrl]);
+
 
     const handleNextSlide = () => {
         setCurrentSlide(currentSlide === data.length -1 ? 0 : currentSlide + 1)
