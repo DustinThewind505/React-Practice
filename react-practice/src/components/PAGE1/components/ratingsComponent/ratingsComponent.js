@@ -41,7 +41,6 @@ function RatingsComponent({numberOfStars = 5}) {
                 {
                     [...Array(numberOfStars)].map((star, index) => {
                         index += 1
-                        console.log(`Check${index}`)
 
                         return(
                             <>
