@@ -10,7 +10,7 @@ function ColorPicker(props) {
 
     return (
         <>
-            <CardHeader>C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r</CardHeader>
+            <CardHeader><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" />C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r<img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
             <CardText>{`Color: `}<span style={props.fontStyles}>{props.color}</span></CardText>
             <div className="color-picker-buttons">

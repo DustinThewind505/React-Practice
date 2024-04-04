@@ -3,7 +3,7 @@ import { CardHeader, CardTitle, CardBody, CardText, CardImg } from 'reactstrap';
 import axios from 'axios';
 
 
-function NasaApi({ fontStyles }) {
+function NasaApi({ fontStyles, logo }) {
     const [nasaApiObject, setNasaApiObject] = useState("");
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function NasaApi({ fontStyles }) {
 
     return (
         <>
-            <CardHeader>Nasa <span style={fontStyles}>API</span></CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Nasa <span style={fontStyles}>API</span><img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
             <CardTitle>{nasaApiObject.title}</CardTitle>
             {

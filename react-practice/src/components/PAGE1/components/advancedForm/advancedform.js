@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as Yup from 'yup';
 
 
-function AdvancedForm() {
+function AdvancedForm({ logo }) {
     // ========== STATE ==========
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -117,7 +117,7 @@ function AdvancedForm() {
     // ========== COMPONENT ==========
     return (
         <>
-            <CardHeader>Advanced Form</CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Advanced Form<img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody className="advanced-form-body">
                 <Form onSubmit={handleSubmit}>
                     <Label>

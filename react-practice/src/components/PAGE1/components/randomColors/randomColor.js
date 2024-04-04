@@ -18,7 +18,7 @@ function RandomColor(props) {
 
     return (
         <>
-            <CardHeader>C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>2</span></CardHeader>
+            <CardHeader><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" />C<span style={props.fontStyles}>o</span>l<span style={props.fontStyles}>o</span>r P<span style={props.fontStyles}>i</span>ck<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>2</span><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <div>
                 <Button className="random-button" onClick={() => props.changeColor(colors)}>Change</Button>
             </div>

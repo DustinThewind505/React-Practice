@@ -31,7 +31,7 @@ export default class ClassComponentForm extends React.Component {
 
         return (
             <>
-            <CardHeader>Class Component Form</CardHeader>
+            <CardHeader><img src={this.props.logo} className="App-logo App-logo-page-1" alt="logo" />Class Component Form<img src={this.props.logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
                 <CardText>Username: {this.state.formData.username}</CardText>
                 <CardText>Email: {this.state.formData.email}</CardText>

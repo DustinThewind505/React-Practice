@@ -5,7 +5,7 @@ import './ratingsComponent.css';
 
 
 
-function RatingsComponent({numberOfStars = 5}) {
+function RatingsComponent({numberOfStars = 5, logo}) {
 
     const [rating, setRating] = useState(0);
     const [mouseOverRating, setMouseOverRating] = useState(0)
@@ -34,7 +34,7 @@ function RatingsComponent({numberOfStars = 5}) {
 
     return(
         <>
-            <CardHeader>Ratings Component</CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Ratings Component<img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
             <CardText>{rating} out of 5</CardText>
             <CardGroup className="circles-container">

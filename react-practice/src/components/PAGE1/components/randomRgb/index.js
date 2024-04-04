@@ -3,7 +3,7 @@ import { Button, CardBody, CardHeader } from "reactstrap";
 
 
 
-function RandomRgbColors({ fontStyles }) {
+function RandomRgbColors({ fontStyles, logo }) {
     const [randomRgbColor, setRandomRgbColor] = useState("");
 
     const handleGenerateRandomColor = () => {
@@ -17,7 +17,7 @@ function RandomRgbColors({ fontStyles }) {
 
     return(
         <>
-            <CardHeader>Ran<span style={fontStyles}>dom</span> <span style={fontStyles}>RGB</span> c<span style={fontStyles}>o</span>l<span style={fontStyles}>o</span>rs</CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Ran<span style={fontStyles}>dom</span> <span style={fontStyles}>RGB</span> c<span style={fontStyles}>o</span>l<span style={fontStyles}>o</span>rs<img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody style={{backgroundColor: randomRgbColor}}>
                 <Button onClick={() => handleGenerateRandomColor()}>Set Color</Button>
             </CardBody>

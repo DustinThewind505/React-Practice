@@ -77,7 +77,7 @@ function InputValue(props) {
 
     return (
         <>
-            <CardHeader><span style={props.fontStyles}>Input</span> V<span style={props.fontStyles}>a</span>l<span style={props.fontStyles}>u</span><span style={props.fontStyles}>e</span></CardHeader>
+            <CardHeader><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /><span style={props.fontStyles}>Input</span> V<span style={props.fontStyles}>a</span>l<span style={props.fontStyles}>u</span><span style={props.fontStyles}>e</span><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <Form onSubmit={handleSubmit} className="input-value-note" >
                 <Label>
                     <Input type="text" name="title" id="inputTitle" value={formData.title} onChange={handleInputChange} placeholder="Enter Title" />

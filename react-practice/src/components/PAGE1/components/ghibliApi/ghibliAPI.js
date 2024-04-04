@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-function GhibliApi({ fontStyles }) {
+function GhibliApi({ fontStyles, logo }) {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function GhibliApi({ fontStyles }) {
 
     return (
         <>
-            <CardHeader>Ghibli <span style={fontStyles}>API</span></CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Ghibli <span style={fontStyles}>API</span><img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             {data.map(movie => (
                 movie.title === "Princess Mononoke" || movie.title === "My Neighbor Totoro" ?
                 <div key={movie.id}>

@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import axios from 'axios';
 
 
-function DogApi({ fontStyles }) {
+function DogApi({ fontStyles, logo }) {
     const [dogPic, setDogPic] = useState("");
     const [breed, setBreed] = useState("dalmatian")
 
@@ -17,9 +17,9 @@ function DogApi({ fontStyles }) {
 
     return (
         <>
-            <CardHeader>Dog <span style={fontStyles}>API</span></CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Dog <span style={fontStyles}>API</span><img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
-            <img src={dogPic} alt="dog smiling" />
+            <img className="dog-api-image" src={dogPic} alt="dog smiling" />
             <div className="dog-api-buttons">
                 <Button onClick={() => setBreed("dalmatian")}>Dalmatian</Button>
                 <Button onClick={() => setBreed("beagle")}>Beagle</Button>

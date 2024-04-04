@@ -3,7 +3,7 @@ import { CardHeader, CardBody, CardText, Button } from "reactstrap";
 import mockData from "./data";
 
 
-function AccordianComponent({ fontStyles }) {
+function AccordianComponent({ fontStyles, logo }) {
     const [accordianSingleSelection, setAccordianSingleSelection] = useState(0);
     const [accordianMultipleSelection, setAccordianMultipleSelection] = useState([]);
 
@@ -46,7 +46,7 @@ function AccordianComponent({ fontStyles }) {
 
     return(
         <>
-            <CardHeader>Ac<span style={fontStyles}>cord</span>ian compo<span style={fontStyles}>ne</span >n<span style={fontStyles}>t</span></CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Ac<span style={fontStyles}>cord</span>ian compo<span style={fontStyles}>ne</span >n<span style={fontStyles}>t</span><img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <Button onClick={() => handleEnableButton()}>{!enableMultipleSelection ? "Enable Multiple Seletion" : "Disable Multiple Selection"}</Button>
             <p>{enableMultipleSelection ? "Multiple selection enabled ✅" : null}</p>
             {

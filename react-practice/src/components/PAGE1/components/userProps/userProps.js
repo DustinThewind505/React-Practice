@@ -39,7 +39,7 @@ function UserProps(props) {
 
     return (
         <>
-            <CardHeader><span style={props.fontStyles}>U</span>s<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>Props</span></CardHeader>
+            <CardHeader><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /><span style={props.fontStyles}>U</span>s<span style={props.fontStyles}>e</span>r <span style={props.fontStyles}>Props</span><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
             <div className="user-lists" style={{ backgroundColor: props.randomColor }}>
                 <UserName name={userInfo} />

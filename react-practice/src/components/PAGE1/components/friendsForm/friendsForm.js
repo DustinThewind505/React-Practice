@@ -21,7 +21,7 @@ const initialFriends = [
     }
 ]
 
-function FriendsForm() {
+function FriendsForm({ logo }) {
     // ========== STATE ==========
     const [data, setData] = useState(initialFriends);
 
@@ -94,7 +94,7 @@ function FriendsForm() {
     // ========== COMPONENT ==========
     return (
         <>
-            <CardHeader>Friends Form</CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Friends Form<img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
                 <form onSubmit={handleSubmit}>
                     <label>

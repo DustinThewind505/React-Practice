@@ -3,7 +3,7 @@ import { CardHeader, CardBody, CardText } from 'reactstrap';
 import CounterButton from './counterButton';
 
 
-function Counter({ fontStyles }) {
+function Counter({ fontStyles, logo }) {
   const [count, setCount] = useState(0);
 
   const add = () => {
@@ -22,7 +22,7 @@ function Counter({ fontStyles }) {
 
     return (
         <>
-            <CardHeader>C<span style={fontStyles}>o</span><span style={fontStyles}>u</span>nt<span style={fontStyles}>e</span>r</CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />C<span style={fontStyles}>o</span><span style={fontStyles}>u</span>nt<span style={fontStyles}>e</span>r<img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
             <CardText>{`Count: `}<span style={fontStyles}>{count}</span></CardText>
             <div className="counter-buttons">

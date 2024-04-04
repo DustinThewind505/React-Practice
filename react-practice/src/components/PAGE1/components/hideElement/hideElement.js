@@ -13,7 +13,7 @@ function HideElement(props) {
 
     return (
         <>
-            <CardHeader><span style={props.fontStyles}>Hide</span> El<span style={props.fontStyles}>e</span>m<span style={props.fontStyles}>e</span>nt</CardHeader>
+            <CardHeader><img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /><span style={props.fontStyles}>Hide</span> El<span style={props.fontStyles}>e</span>m<span style={props.fontStyles}>e</span>nt<img src={props.logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <div>
                 <Button onClick={toggleStar}>
                     {props.star ? "Hide" : "Show"}

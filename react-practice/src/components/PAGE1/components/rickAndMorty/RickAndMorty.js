@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { CardHeader, CardBody, CardTitle, CardImg } from 'reactstrap';
+import { CardHeader, CardBody, CardTitle, CardImg, CardText } from 'reactstrap';
 import { Button } from 'reactstrap';
 import axios from 'axios';
 
 
-function RickAndMortyApi({ fontStyles }) {
+function RickAndMortyApi({ fontStyles, logo }) {
     const [data, setData] = useState([]);
     const [characterNumber, setCharacterNumber] = useState(826);
     const [pageNumber, setPageNumber] = useState(1);
@@ -13,11 +13,15 @@ function RickAndMortyApi({ fontStyles }) {
 
 
     const handlePrevious = () => {
-        setCharacterNumber(characterNumber - 1)
+        if(pageNumber === 1) {
+            setPageNumber(pageNumber - 0)
+        } else {
+            setPageNumber(pageNumber - 1)
+        }
     }
 
     const handleNext = () => {
-        setCharacterNumber(characterNumber + 1)
+        setPageNumber(pageNumber + 1)
     }
 
     const handleRandom = () => {
@@ -31,8 +35,8 @@ function RickAndMortyApi({ fontStyles }) {
                 setData(res.data);
                 console.log("Character-Number-Axios-Call", res)
             })
-            .catch(err => {
-                console.error('Error', err)
+            .catch(error => {
+                console.error('Error', error)
             })
 
     }, [characterNumber]);
@@ -49,26 +53,27 @@ function RickAndMortyApi({ fontStyles }) {
 
     return (
         <>
-            <CardHeader>Rick and Morty <span style={fontStyles}>API</span></CardHeader>
+            <CardHeader><img src={logo} className="App-logo App-logo-page-1" alt="logo" />Rick and Morty <span style={fontStyles}>API</span><img src={logo} className="App-logo App-logo-page-1" alt="logo" /></CardHeader>
             <CardBody>
-            <img src={data.image} alt="morty smith" />
-            <CardTitle>{data.name}</CardTitle>
-            <div className="rick-and-morty-buttons">
-                <Button onClick={handlePrevious}>Previous</Button>
-                <Button onClick={handleRandom}>Random</Button>
-                <Button onClick={handleNext}>Next</Button>
-            </div>
-            <div className="rick-and-morty-page-images-container">
-            {
-                pageData.map((character, index) => {
-                    return(
-                        <>
-                            <CardImg className={"rick-and-morty-page-images"} src={character.image} alt={`test`}/>
-                        </>
-                    )
-                })
-            }
-            </div>
+                <CardText>{data.name}</CardText>
+                <img src={data.image} alt="morty smith" />
+                <div className="rick-and-morty-buttons">
+                    <Button onClick={handleRandom}>Random</Button>
+                </div>
+                <CardText>Page {pageNumber}</CardText>
+                <Button onClick={handlePrevious}>Previous Page</Button>
+                <Button onClick={handleNext}>Next Page</Button>
+                <div className="rick-and-morty-page-images-container">
+                {
+                    pageData.map((character, index) => {
+                        return(
+                            <>
+                                <CardImg key={character.id} className={"rick-and-morty-page-images"} src={character.image} alt={`test`}/>
+                            </>
+                        )
+                    })
+                }
+                </div>
             </CardBody>
         </>
     )
