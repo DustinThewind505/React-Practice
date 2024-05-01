@@ -1,18 +1,22 @@
 .image-slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    color: aquamarine;
+    margin: 3rem 1rem 1rem;
 }
 
-.current-slide {
+.current-api-slide, .current-marvel-slide {
     border-radius: 0.5rem;
+    width: 25%;
+}
+
+.current-api-slide {
     box-shadow: 0px 0px 7px white;
-    width: 50%;
+}
+
+.current-marvel-slide {
+    box-shadow: 0px 0px 7px firebrick;
 }
 
 .hidden-slide {
-    border: 3px solid white;
     display: none;
 }
 

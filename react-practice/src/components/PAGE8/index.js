@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 
+import Data from "../PAGE5/data"
+
 import "./image-slider.css";
 
 
 function Page8({ propsUrl = "https://picsum.photos/v2/list?page=1&limit=5"}) {
     // ===== STATE =====
-    const [data, setData] = useState([]);
-    const [currentSlide, setCurrentSlide] = useState(1);
+    const [apiData, setApiData] = useState([]);
+    const [currentApiSlide, setCurrentApiSlide] = useState(1);
+
+    const [currentMarvelSlide, setCurrentMarvelSlide] = useState(0)
+
 
     // ===== FUNCTIONS =====
     async function fetchApiTest(url) {
@@ -16,7 +21,7 @@ function Page8({ propsUrl = "https://picsum.photos/v2/list?page=1&limit=5"}) {
             const response = await fetch(url);
             const urlData = await response.json();
 
-            setData(urlData);
+            setApiData(urlData);
 
         } catch(error) {
             console.log("error from fetchApitest", error);
@@ -32,12 +37,20 @@ function Page8({ propsUrl = "https://picsum.photos/v2/list?page=1&limit=5"}) {
     }, [propsUrl]);
 
 
-    const handleNextSlide = () => {
-        setCurrentSlide(currentSlide === data.length -1 ? 0 : currentSlide + 1)
+    const handleNextApiSlide = () => {
+        setCurrentApiSlide(currentApiSlide === apiData.length -1 ? 0 : currentApiSlide + 1)
     }
 
-    const handlePreviousSlide = () => {
-        setCurrentSlide(currentSlide === 0 ? data.length -1 : currentSlide - 1)
+    const handlePreviousApiSlide = () => {
+        setCurrentApiSlide(currentApiSlide === 0 ? apiData.length -1 : currentApiSlide - 1)
+    }
+
+    const handlePreviousMarvelButton = () => {
+        setCurrentMarvelSlide(currentMarvelSlide === 0 ? Data.length - 1 : currentMarvelSlide - 1)
+    }
+    
+    const handleNextMarvelButton = () => {
+        setCurrentMarvelSlide(currentMarvelSlide === Data.length - 1 ? 0 : currentMarvelSlide + 1)
     }
 
     // ===== COMPONENT =====
@@ -45,11 +58,22 @@ function Page8({ propsUrl = "https://picsum.photos/v2/list?page=1&limit=5"}) {
         <>
             <h1>Page 8</h1>
             <div className="image-slider-container">
-                <button onClick={() => handlePreviousSlide()}>Previous</button>
+                <h2>Api Call</h2>
+                <p>https://picsum.photos/v2/list?page=1&limit=5</p>
+                <button onClick={() => handlePreviousApiSlide()}>Previous</button>
                 {
-                    data.map((image, index) => <img key={image.id} className={currentSlide === index ? "current-slide" : "current-slide hidden-slide"} src={image.download_url} alt={image.author}/>)
+                    apiData.map((image, index) => <img key={image.id} className={currentApiSlide === index ? "current-api-slide" : "current-api-slide hidden-slide"} src={image.download_url} alt={image.author}/>)
                 }
-                <button onClick={() => handleNextSlide()}>Next</button>
+                <button onClick={() => handleNextApiSlide()}>Next</button>
+            </div>
+            <div className="image-slider-container">
+            <h2>Local Data</h2>
+            <p>"./data"</p>
+            <button onClick={() => handlePreviousMarvelButton()}>Previous</button>
+                {
+                    Data.map((avenger, index) => <img key={avenger.id} className={currentMarvelSlide === index ? "current-marvel-slide" : "current-marvel-slide hidden-slide"} src={avenger.thumbnail} alt={avenger.name} />)
+                }
+                <button onClick={() => handleNextMarvelButton()}>Next</button>
             </div>
         </>
     )
@@ -57,3 +81,4 @@ function Page8({ propsUrl = "https://picsum.photos/v2/list?page=1&limit=5"}) {
 }
 
 export default Page8;
+
