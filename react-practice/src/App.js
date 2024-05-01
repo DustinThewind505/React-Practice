@@ -9,7 +9,8 @@ import { CustomHooks } from './components/PAGE4';
 import Page5 from './components/PAGE5/page5.js';
 import Page6 from './components/PAGE6/page6.js';
 import Page7 from './components/PAGE7/index.js';
-import Page8 from './components/PAGE8/index.js'
+import Page8 from './components/PAGE8/index.js';
+import Page9 from './components/PAGE9'
 
 import { avengersData } from './components/PAGE2/avengersData';
 import './App.css';
@@ -43,6 +44,7 @@ function App() {
           <li className='nav-buttons'><NavLink to='/page6'>Random Color Gen</NavLink></li>
           <li className='nav-buttons'><NavLink to='/page7'>Star rating</NavLink></li>
           <li className='nav-buttons'><NavLink to='/page8'>Image Slider</NavLink></li>
+          <li className='nav-buttons'><NavLink to='/page9'>Load More</NavLink></li>
         </ul>
         <Route exact path='/' component={Home} />
         <Route path='/react-components' component={PageOne} />
@@ -65,6 +67,9 @@ function App() {
         </Route>
         <Route path='/page8'>
           <Page8 />
+        </Route>
+        <Route path='/page9'>
+          <Page9 />
         </Route>
       </header>
     </div>
