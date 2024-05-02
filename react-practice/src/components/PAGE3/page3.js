@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 
-import YupFormContainer from './yup/yupContainer';
+import YupFormContainer from './yup';
 import DefaultForms from './default/defaultContainer';
 import BootstrapForms from './bootstrap/bootstrapContainer';
 
+import "./page3styles.css"
 
 
 function Page3() {

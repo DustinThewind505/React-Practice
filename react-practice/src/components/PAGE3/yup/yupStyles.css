@@ -1,0 +1,16 @@
+.yup-forms {
+    background-color:yellow;
+    accent-color: yellow;
+    caret-color: turquoise;
+}
+
+.yup-forms input {
+    background-image: linear-gradient(to bottom right, goldenrod, goldenrod, goldenrod, yellow);
+    
+    border: 1px solid black;
+}
+
+.yup-forms .form-container {
+    background-color: goldenrod;
+    border: 3px solid gold;
+}

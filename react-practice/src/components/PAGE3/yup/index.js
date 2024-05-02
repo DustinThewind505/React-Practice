@@ -16,7 +16,7 @@ import Form12 from './forms/form12';
 import Form13 from './forms/form13';
 import Form14 from './forms/form14';
 
-
+import "./yupStyles.css"
 
 function YupFormContainer(props) {
     // ========== STATE ==========
@@ -31,9 +31,9 @@ function YupFormContainer(props) {
     return (
         <>
 
-            <img className='forms-img yup' src='https://miro.medium.com/max/1000/1*4Apu-JRlee0VEJbQDplgPg.png' alt='yup logo' />
+            <img className='forms-img' src='https://miro.medium.com/max/1000/1*4Apu-JRlee0VEJbQDplgPg.png' alt='yup logo' />
 
-            <div className='forms-page-container'>
+            <div className='forms-page-container yup-forms'>
                 <Form1 setDisplayForm={props.setDisplayForm} />
                 <Form2 setDisplayForm={props.setDisplayForm} />
                 <Form3 setDisplayForm={props.setDisplayForm} />
