@@ -19,6 +19,7 @@ import { ClassComponentForm } from './components/classComponentForm';
 import AccordianComponent from './components/accordianComponent/accordianComponent';
 import RandomRgbColors from './components/randomRgb';
 import RatingsComponent from './components/ratingsComponent/ratingsComponent';
+import LoadMore from './components/loadMore'
 
 import './page1.css';
 
@@ -159,6 +160,12 @@ function PageOne() {
                 <Col sm="6" md="4" xl="6">
                     <Card style={bgStyles} className="ratings-component">
                         <RatingsComponent fontStyles={fontStyles} logo={logo} />
+                    </Card>
+                </Col>
+                {/* ======== Load More ======== */}
+                <Col sm="6" md="4" xl="6">
+                    <Card style={bgStyles} className="ratings-component">
+                        <LoadMore fontStyles={fontStyles} logo={logo} />
                     </Card>
                 </Col>
             </Row>
