@@ -164,7 +164,7 @@ function PageOne() {
                 </Col>
                 {/* ======== Load More ======== */}
                 <Col sm="6" md="4" xl="6">
-                    <Card style={bgStyles} className="ratings-component">
+                    <Card style={bgStyles} className="load-more-component">
                         <LoadMore fontStyles={fontStyles} logo={logo} />
                     </Card>
                 </Col>
