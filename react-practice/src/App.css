@@ -19,3 +19,58 @@
 .inactive-circle {
   background-color: none;
 }
+
+footer {
+  background-color: #282c34;
+  border-top: 3px solid #355A7F;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-section img {
+  width: 6rem;
+}
+
+.middle-section {
+  background-image: url('../public/images/favicon.webp');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  height: 15vh;
+  width: 50rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+}
+
+.middle-section p {
+  color: darkgreen;
+  font-size: 1.7rem;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px lawngreen;
+}
+
+.right-section {
+  font-size: 1rem;
+}
+
+.right-section a {
+  border-radius: 5px;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-section a:hover {
+  background-color: darkolivegreen;
+}
+
+.right-section img {
+  width: 5rem;
+}

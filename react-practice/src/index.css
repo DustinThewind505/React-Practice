@@ -9,6 +9,7 @@
 
 .app {
   background-color: darkslategrey;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(darkslategrey),to(rgb(2, 175, 175)));
   font-size: calc(10px + 2vmin);
 }
 
@@ -31,6 +32,7 @@
 
 .app-header {
   background-color: #282c34;
+  border-bottom: 3px solid #355A7F;
   color: white;
   padding: 1% 0;
 }
